@@ -1,6 +1,18 @@
 Benchmarking nearest neighbors
 ==============================
 
+Usage
+========
+
+The only prerequisite is Python (tested with 3.10.6) and Docker.
+
+1. Clone the repo.
+2. Run `pip install -r requirements.txt`.
+3. Run `python install.py --algorithm symqg` to build all the libraries inside Docker containers (this can take a while, like 10-30 minutes).
+4. Run `python run.py --algorithm symqg --dataset sift-128-euclidean --runs 1` (this can take an extremely long time, potentially days)
+5. Run `python plot.py` or `python create_website.py` to plot results.
+6. Run `python data_export.py --out res.csv` to export all results into a csv file for additional post-processing.
+
 [![Build Status](https://img.shields.io/github/actions/workflow/status/erikbern/ann-benchmarks/benchmarks.yml?branch=main&style=flat-square)](https://github.com/erikbern/ann-benchmarks/actions/workflows/benchmarks.yml)
 
 Doing fast searching of nearest neighbors in high dimensional spaces is an increasingly important problem with notably few empirical attempts at comparing approaches in an objective way, despite a clear need for such to drive optimization forward.
